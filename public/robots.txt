@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /documents/editor
+Disallow: /documents/editor/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+Sitemap: https://atoll-path.vercel.app/sitemap.xml
