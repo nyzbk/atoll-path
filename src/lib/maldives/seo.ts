@@ -190,11 +190,11 @@ const INDEXABLE: PageId[] = [
   "about",
 ];
 
-export function sitemapEntries(origin: string) {
+export function sitemapEntries(_origin?: string) {
   return INDEXABLE.map((id) => {
     const p = PAGES[id];
     return {
-      loc: `${origin}${p.path === "/" ? "" : p.path}`,
+      loc: `${SITE_ORIGIN}${p.path === "/" ? "" : p.path}`,
       lastmod: CHECKED_AT,
       changefreq: p.changefreq,
       priority: p.priority,

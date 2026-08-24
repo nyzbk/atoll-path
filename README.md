@@ -12,14 +12,8 @@ Live: [atoll-path.vercel.app](https://atoll-path.vercel.app)
 
 ## AdSense
 
-Publisher `ca-pub-7636435144500691`. Auto ads **OFF**. Manual Display units: `after-success` / `mid` / `footer`. Placeholders until Site Ready (`VITE_ADSENSE_LIVE` stays unset).
-
-Ownership (all three, live on every page):
-
-1. Head script: `adsbygoogle.js?client=ca-pub-7636435144500691`
-2. [ads.txt](https://atoll-path.vercel.app/ads.txt): `google.com, pub-7636435144500691, DIRECT, f08c47fec0942fa0`
-3. Meta: `google-adsense-account`
+See [ADSENSE.md](./ADSENSE.md). Publisher `ca-pub-7636435144500691`. Auto ads **OFF**. Manual Display: `after-success` / `mid` / `footer`. Placeholders until Site Ready.
 
 ## Search Console
 
-After the production URL is live: add URL-prefix property `https://atoll-path.vercel.app` and submit `https://atoll-path.vercel.app/sitemap.xml`.
+See [SEARCH_CONSOLE.md](./SEARCH_CONSOLE.md). URL-prefix property `https://atoll-path.vercel.app/`. Ownership HTML live. Sitemap submitted **24 Aug 2026 — Success, 14 URLs**.

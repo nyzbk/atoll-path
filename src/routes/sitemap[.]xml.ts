@@ -4,9 +4,8 @@ import { sitemapEntries } from "@/lib/maldives/seo";
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: async ({ request }: { request: Request }) => {
-        const origin = new URL(request.url).origin;
-        const entries = sitemapEntries(origin);
+      GET: async () => {
+        const entries = sitemapEntries();
         const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${entries
