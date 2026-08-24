@@ -6,6 +6,9 @@ import { AdSense } from "@/components/adsense";
 import { PAGES, SITE_NAME } from "@/lib/maldives/seo";
 import appCss from "../styles.css?url";
 
+const ADSENSE_SRC =
+  "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7636435144500691";
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -33,6 +36,14 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap",
+      },
+    ],
+    // AdSense crawler reads SSR HTML (no JS). Must live in <head>, not a useEffect.
+    scripts: [
+      {
+        src: ADSENSE_SRC,
+        async: true,
+        crossOrigin: "anonymous",
       },
     ],
   }),
