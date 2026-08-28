@@ -22,7 +22,8 @@ export type PageId =
   | "faq"
   | "privacy"
   | "terms"
-  | "about";
+  | "about"
+  | "contact";
 
 type PageSeo = {
   path: string;
@@ -171,6 +172,15 @@ export const PAGES: Record<PageId, PageSeo> = {
     changefreq: "monthly",
     priority: 0.4,
   },
+  contact: {
+    path: "/contact",
+    name: "Контакт",
+    title: "Контакт | Atoll Path",
+    description:
+      "Почта оператора Atoll Path. Не Immigration и не рекрутинг. Не присылайте паспорт и IM30.",
+    changefreq: "monthly",
+    priority: 0.4,
+  },
 };
 
 const INDEXABLE: PageId[] = [
@@ -188,6 +198,7 @@ const INDEXABLE: PageId[] = [
   "privacy",
   "terms",
   "about",
+  "contact",
 ];
 
 export function sitemapEntries(_origin?: string) {

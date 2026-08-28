@@ -1577,6 +1577,17 @@ export const faqs: { q: LocaleText; a: LocaleText; sources: string[] }[] = [
     },
     sources: ["lra"],
   },
+  {
+    q: {
+      ru: "Когда появится реклама и нужно ли по ней кликать?",
+      en: "When will ads appear, and do I have to click them?",
+    },
+    a: {
+      ru: "Слоты after-success, mid и footer уже размечены. Живые объявления Google AdSense включатся только после одобрения сайта (Site Ready). Пока на их месте плейсхолдеры. Реклама не читает CV в браузере. Мы не просим кликать объявления — это нарушение правил Google и нам не помогает. На /privacy, /terms, /about, /contact и в редакторе документов баннеров нет.",
+      en: "The after-success, mid and footer slots are already marked. Live Google AdSense units turn on only after Site Ready. Until then you see placeholders. Ads do not read the in-browser CV. We do not ask you to click ads — that breaks Google policy and does not help us. There are no units on /privacy, /terms, /about, /contact or in the document editor.",
+    },
+    sources: [],
+  },
 ];
 
 export const fetchAllowlist = [

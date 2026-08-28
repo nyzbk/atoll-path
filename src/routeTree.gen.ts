@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BoardsRouteImport } from './routes/boards'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ContractRouteImport } from './routes/contract'
 import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -40,6 +41,11 @@ const AboutRoute = AboutRouteImport.update({
 const BoardsRoute = BoardsRouteImport.update({
   id: '/boards',
   path: '/boards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContractRoute = ContractRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/boards': typeof BoardsRoute
+  '/contact': typeof ContactRoute
   '/contract': typeof ContractRoute
   '/documents': typeof DocumentsRouteWithChildren
   '/faq': typeof FaqRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/boards': typeof BoardsRoute
+  '/contact': typeof ContactRoute
   '/contract': typeof ContractRoute
   '/faq': typeof FaqRoute
   '/path': typeof PathRoute
@@ -155,6 +163,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/boards': typeof BoardsRoute
+  '/contact': typeof ContactRoute
   '/contract': typeof ContractRoute
   '/documents': typeof DocumentsRouteWithChildren
   '/faq': typeof FaqRoute
@@ -176,6 +185,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/boards'
+    | '/contact'
     | '/contract'
     | '/documents'
     | '/faq'
@@ -195,6 +205,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/boards'
+    | '/contact'
     | '/contract'
     | '/faq'
     | '/path'
@@ -213,6 +224,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/boards'
+    | '/contact'
     | '/contract'
     | '/documents'
     | '/faq'
@@ -233,6 +245,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BoardsRoute: typeof BoardsRoute
+  ContactRoute: typeof ContactRoute
   ContractRoute: typeof ContractRoute
   DocumentsRoute: typeof DocumentsRouteWithChildren
   FaqRoute: typeof FaqRoute
@@ -268,6 +281,13 @@ declare module '@tanstack/react-router' {
       path: '/boards'
       fullPath: '/boards'
       preLoaderRoute: typeof BoardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contract': {
@@ -389,6 +409,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BoardsRoute: BoardsRoute,
+  ContactRoute: ContactRoute,
   ContractRoute: ContractRoute,
   DocumentsRoute: DocumentsRouteWithChildren,
   FaqRoute: FaqRoute,

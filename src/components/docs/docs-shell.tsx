@@ -103,6 +103,9 @@ export function DocsShell({ children }: { children: ReactNode }) {
             <Link to="/about" className="no-underline hover:text-[#202124]">
               {ru ? "О проекте" : "About"}
             </Link>
+            <Link to="/contact" className="no-underline hover:text-[#202124]">
+              {ru ? "Контакт" : "Contact"}
+            </Link>
           </nav>
         </footer>
       )}

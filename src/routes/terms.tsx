@@ -13,7 +13,7 @@ export function TermsPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <h1 className="font-display text-4xl">{ru ? "Условия" : "Terms"}</h1>
-      <p className="mt-2 text-sm text-subtle">{ru ? "Обновлено 23 августа 2026" : "Last updated 23 August 2026"}</p>
+      <p className="mt-2 text-sm text-subtle">{ru ? "Обновлено 28 августа 2026" : "Last updated 28 August 2026"}</p>
       <p className="mt-6 leading-relaxed text-muted">
         {ru
           ? "Atoll Path предоставляется бесплатно «как есть». Это карта прямого найма, не лицензированное employment agency, не Maldives Immigration и не юрист. Оффер не гарантируется."
@@ -33,6 +33,11 @@ export function TermsPage() {
         {ru
           ? "Шаблоны документов — помощники. Официальный бланк IM30 — только на immigration.gov.mv/downloads. Work permit подаёт работодатель."
           : "Document templates are helpers. The official IM30 blank is only on immigration.gov.mv/downloads. The employer files the work permit."}
+      </p>
+      <p className="mt-4 leading-relaxed text-muted">
+        {ru
+          ? "Вопросы по сайту: ultaultimatum@gmail.com. Не присылайте паспорт. Мы не сторона вашего контракта с резортом."
+          : "Site questions: ultaultimatum@gmail.com. Do not send a passport. We are not a party to your resort contract."}
       </p>
     </div>
   );

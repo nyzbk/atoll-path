@@ -136,6 +136,12 @@ export function AppShell({ children }: { children: ReactNode }) {
                 : "Free self-help platform. Not an agency, not Immigration, not an offer guarantee. The guide stays open."}
             </p>
             <nav className="flex flex-wrap gap-x-4 gap-y-1 text-subtle">
+              <Link to="/path" className="no-underline hover:text-fg">
+                {ru ? "Путь" : "Path"}
+              </Link>
+              <Link to="/faq" className="no-underline hover:text-fg">
+                FAQ
+              </Link>
               <Link to="/privacy" className="no-underline hover:text-fg">
                 {ru ? "Конфиденциальность" : "Privacy"}
               </Link>
@@ -144,6 +150,9 @@ export function AppShell({ children }: { children: ReactNode }) {
               </Link>
               <Link to="/about" className="no-underline hover:text-fg">
                 {ru ? "О проекте" : "About"}
+              </Link>
+              <Link to="/contact" className="no-underline hover:text-fg">
+                {ru ? "Контакт" : "Contact"}
               </Link>
             </nav>
           </div>

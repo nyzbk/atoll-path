@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export type AdSlot = "after-success" | "mid" | "footer";
 
 /** No Display units on these routes (AdSense policy + playbook). */
-export const LEGAL_PATHS = new Set(["/privacy", "/terms", "/about"]);
+export const LEGAL_PATHS = new Set(["/privacy", "/terms", "/about", "/contact"]);
 
 const CLIENT =
   (import.meta.env.VITE_ADSENSE_CLIENT as string | undefined) || "ca-pub-7636435144500691";

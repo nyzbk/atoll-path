@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useApp } from "@/lib/maldives/store";
 import { CHECKED_AT, sources } from "@/lib/maldives/knowledge";
+import { homeHow, homeLimits } from "@/lib/maldives/site-copy";
 import { pageHead } from "@/lib/maldives/seo";
 
 export const Route = createFileRoute("/")({
@@ -136,6 +137,44 @@ function Home() {
             </Card>
           </Link>
         ))}
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <h2 className="font-display text-3xl">{homeHow[lang].title}</h2>
+        <div className="mt-6 grid gap-4">
+          {homeHow[lang].paragraphs.map((p) => (
+            <p key={p.slice(0, 40)} className="text-[15px] leading-relaxed text-muted">
+              {p}
+            </p>
+          ))}
+        </div>
+        <h2 className="mt-12 font-display text-3xl">{homeLimits[lang].title}</h2>
+        <div className="mt-6 grid gap-4">
+          {homeLimits[lang].paragraphs.map((p) => (
+            <p key={p.slice(0, 40)} className="text-[15px] leading-relaxed text-muted">
+              {p}
+            </p>
+          ))}
+        </div>
+        <p className="mt-8 text-sm text-muted">
+          {ru ? "Дальше по делу: " : "Next: "}
+          <Link to="/path" className="text-accent underline">
+            {ru ? "14 шагов" : "14 steps"}
+          </Link>
+          {", "}
+          <Link to="/faq" className="text-accent underline">
+            FAQ
+          </Link>
+          {", "}
+          <Link to="/scams" className="text-accent underline">
+            {ru ? "скамы" : "scams"}
+          </Link>
+          {", "}
+          <Link to="/roles" className="text-accent underline">
+            {ru ? "роли и вилки" : "roles"}
+          </Link>
+          .
+        </p>
       </section>
 
       <div className="mx-auto max-w-6xl px-4">

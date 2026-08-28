@@ -13,7 +13,7 @@ export function PrivacyPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <h1 className="font-display text-4xl">{ru ? "Конфиденциальность" : "Privacy"}</h1>
-      <p className="mt-2 text-sm text-subtle">{ru ? "Обновлено 23 августа 2026" : "Last updated 23 August 2026"}</p>
+      <p className="mt-2 text-sm text-subtle">{ru ? "Обновлено 28 августа 2026" : "Last updated 28 August 2026"}</p>
 
       <h2 className="mt-8 font-display text-2xl">{ru ? "Кратко" : "Summary"}</h2>
       <p className="mt-4 leading-relaxed text-muted">
@@ -65,8 +65,12 @@ export function PrivacyPage() {
           adssettings.google.com
         </a>
         {ru
-          ? ". Не вводите номер паспорта в общедоступные поля CV."
-          : ". Do not type a passport number into a CV you email widely."}
+          ? ". Не вводите номер паспорта в общедоступные поля CV. Почта: "
+          : ". Do not type a passport number into a CV you email widely. Email: "}
+        <a className="text-accent underline" href="mailto:ultaultimatum@gmail.com">
+          ultaultimatum@gmail.com
+        </a>
+        {ru ? " — без сканов паспорта." : " — no passport scans."}
       </p>
     </div>
   );

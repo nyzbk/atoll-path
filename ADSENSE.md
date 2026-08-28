@@ -72,3 +72,18 @@ Privacy / Terms / About обязательны до заявки на рекла
 ## Atoll Path — факт 24 авг. 2026 13:07 GMT+5
 
 Сайт в AdSense: выполняется проверка. ads.txt: **Разрешено**. Live ads: ещё нет.
+
+## Ворота контента (28.08.2026, план 187)
+
+Рецензент валит tool-SPA на тонком тексте, даже если ads.txt Allowed. На Atoll Path после этого деплоя:
+
+- Homepage: полные абзацы how-it-works + limits в **сыром HTML**.
+- How-to = `/path` (14 шагов).
+- FAQ 14 вопросов, включая рекламу.
+- About ≥ 400 слов, одна ссылка на соседний tool.
+- Contact: `ultaultimatum@gmail.com`, без формы загрузки.
+- Footer: Путь · FAQ · Privacy · Terms · About · Contact.
+- `/contact` без баннеров. Editor вне sitemap.
+- Auto ads OFF. `VITE_ADSENSE_LIVE` не включать. Request review сегодня **не** жать.
+
+Жёлтый баннер кабинета (платёжка/телефон) закрывает только владелец в UI AdSense.

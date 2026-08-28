@@ -19,7 +19,7 @@
 | Verification file | `/google9cea52a5e8c8a836.html` → `public/google9cea52a5e8c8a836.html` |
 | File body (ровно) | `google-site-verification: google9cea52a5e8c8a836.html` |
 | Sitemap | `https://atoll-path.vercel.app/sitemap.xml` |
-| Sitemap status | **Успешно**, 24 авг. 2026, **14 страниц**, 0 видео |
+| Sitemap status | **Успешно**, 24 авг. 2026, **15 URL** с 28 авг. 2026 (добавлен `/contact`) |
 | robots.txt | `https://atoll-path.vercel.app/robots.txt` |
 
 Не удалять verification HTML. Не менять имя файла. Не добавлять лишний перевод строки, если Google отдал файл без него.
@@ -35,9 +35,9 @@
 3. **Sitemap.** Уже отправлен, статус Успешно, 14 URL. Повторно слать только если **изменился список URL**.
 4. **Гайд GSC.** Ниже. Официально: [краткое руководство](https://support.google.com/webmasters/answer/6258314?hl=ru).
 
-## 14 URL в sitemap (ровно INDEXABLE)
+## 15 URL в sitemap (INDEXABLE)
 
-`/` `/path` `/sources` `/boards` `/roles` `/documents` `/contract` `/scams` `/research` `/reddit` `/faq` `/privacy` `/terms` `/about`
+`/` `/path` `/sources` `/boards` `/roles` `/documents` `/contract` `/scams` `/research` `/reddit` `/faq` `/privacy` `/terms` `/about` `/contact`
 
 **Никогда в sitemap / всегда noindex:** `/documents/editor` и любые `/documents/editor/*` (PII, черновики).
 
