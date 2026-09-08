@@ -8,6 +8,8 @@ import { useApp } from "@/lib/maldives/store";
 import { scams, t } from "@/lib/maldives/knowledge";
 import { pageHead } from "@/lib/maldives/seo";
 import { AdUnit } from "@/components/ads/ad-unit";
+import { GuideBlock } from "@/components/guide-block";
+import { scamsGuide } from "@/lib/maldives/gate-c-copy";
 
 export const Route = createFileRoute("/scams")({
   head: () => pageHead("scams"),
@@ -42,6 +44,8 @@ export function ScamsPage() {
           {ru ? "Редактор документов →" : "Document editor →"}
         </Link>
       </p>
+
+      <GuideBlock copy={scamsGuide[lang]} />
       <div className="mt-8 grid gap-3">
         {scams.map((s) => (
           <Card key={s.id}>
