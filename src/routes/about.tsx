@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useApp } from "@/lib/maldives/store";
 import { pageHead } from "@/lib/maldives/seo";
 import { aboutCopy, CONTACT_EMAIL } from "@/lib/maldives/site-copy";
+import { aboutExtra } from "@/lib/maldives/gate-c-copy";
 
 export const Route = createFileRoute("/about")({
   head: () => pageHead("about"),
@@ -15,7 +16,7 @@ export function AboutPage() {
     <div className="mx-auto max-w-2xl px-4 py-12">
       <h1 className="font-display text-4xl">{ru ? "О проекте" : "About"}</h1>
       <div className="mt-6 grid gap-4">
-        {aboutCopy[lang].map((p) => (
+        {[...aboutCopy[lang], ...aboutExtra[lang]].map((p) => (
           <p key={p.slice(0, 40)} className="leading-relaxed text-muted">
             {p}
           </p>
