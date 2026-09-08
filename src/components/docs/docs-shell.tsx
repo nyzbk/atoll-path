@@ -20,13 +20,9 @@ export function DocsShell({ children }: { children: ReactNode }) {
     void Promise.resolve(useDocs.persist.rehydrate()).finally(() => setReady(true));
   }, []);
 
-  if (!ready) {
-    return (
-      <div className="docs-workspace grid min-h-dvh place-items-center text-sm text-[#5f6368]">
-        {ru ? "Открываю документы…" : "Opening documents…"}
-      </div>
-    );
-  }
+  // Persist may still be hydrating "My files". Never replace children with a
+  // spinner: AdsBot/curl read the first HTML (Help 81904, plan 187 §2.2.7).
+  void ready;
 
   return (
     <div className="docs-workspace min-h-dvh">
