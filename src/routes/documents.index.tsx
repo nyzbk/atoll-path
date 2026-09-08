@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 import { AdUnit } from "@/components/ads/ad-unit";
 import type { DocLang } from "@/lib/maldives/docs-types";
 import { pageHead } from "@/lib/maldives/seo";
+import { GuideBlock } from "@/components/guide-block";
+import { documentsGuide } from "@/lib/maldives/gate-c-copy";
 
 export const Route = createFileRoute("/documents/")({
   head: () => pageHead("documents"),
@@ -54,6 +56,8 @@ export function DocumentsHome() {
           ? "Это не лицензированное агентство и не Maldives Immigration. Это редактор: CV, письма, трекер, проверка оффера. Work permit по-прежнему подаёт работодатель в Xpat. Файлы живут на этом устройстве."
           : "This is not a licensed agency and not Maldives Immigration. It is an editor: CV, letters, tracker, offer check. The employer still files the work permit in Xpat. Files live on this device."}
       </p>
+
+      <GuideBlock copy={documentsGuide[lang]} />
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <button
