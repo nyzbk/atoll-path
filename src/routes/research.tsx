@@ -7,6 +7,8 @@ import { useApp } from "@/lib/maldives/store";
 import { fetchAllowlist, sources } from "@/lib/maldives/knowledge";
 import { askGrounded, fetchOfficial, searchKnowledge } from "@/lib/maldives/research";
 import { pageHead } from "@/lib/maldives/seo";
+import { GuideBlock } from "@/components/guide-block";
+import { researchGuide } from "@/lib/maldives/gate-c-copy";
 
 export const Route = createFileRoute("/research")({
   head: () => pageHead("research"),
@@ -76,6 +78,8 @@ export function ResearchPage() {
           ? "Это не «весь интернет». Сначала поиск по проверенному графу. Затем fetch только с allowlist. Модель отвечает только по этому пакету и не имеет права выдумывать пошлины и зарплаты."
           : "This is not “the whole internet”. Search the verified graph first. Then fetch only from the allowlist. The model may answer only from that pack and must not invent fees or salaries."}
       </p>
+
+      <GuideBlock copy={researchGuide[lang]} />
 
       <Card className="mt-8">
         <h2 className="font-display text-xl">{ru ? "1. Поиск по графу" : "1. Graph search"}</h2>
