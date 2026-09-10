@@ -43,6 +43,9 @@ export function ScamsPage() {
         <Link to="/documents" className="text-sm text-accent">
           {ru ? "Редактор документов →" : "Document editor →"}
         </Link>
+        <Link to="/fee" className="text-sm text-accent">
+          {ru ? "Счёт ÷ basic →" : "Invoice ÷ basic →"}
+        </Link>
       </p>
 
       <GuideBlock copy={scamsGuide[lang]} />
@@ -100,7 +103,7 @@ export function ScamsPage() {
           <a href="https://lra.gov.mv/" target="_blank" rel="noreferrer" className="text-accent">
             lra.gov.mv
           </a>
-          {" · "}
+          {" \u00b7 "}
           <a href="https://one.gov.mv/" target="_blank" rel="noreferrer" className="text-accent">
             one.gov.mv
           </a>
