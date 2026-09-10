@@ -3,6 +3,8 @@ import { CHECKED_AT, faqs, playbook } from "./knowledge";
 /** Production host. Canonicals point here so preview URLs do not split ranking. */
 export const SITE_ORIGIN = "https://atoll-path.vercel.app";
 export const SITE_NAME = "Atoll Path";
+/** Publisher studio. Footer button only — not a Maldives recruiter. */
+export const HUB_URL = "https://ultimatum-hub.vercel.app/";
 
 const KEYWORDS =
   "работа на Мальдивах, работа на мальдивах без агентства, Maldives jobs, Maldives resort jobs, work permit Maldives, Xpat eGov, Entry Pass, Work e-Visa, прямой найм резорт, Jobsicle";
@@ -17,6 +19,7 @@ export type PageId =
   | "editor"
   | "contract"
   | "scams"
+  | "fee"
   | "research"
   | "reddit"
   | "faq"
@@ -109,6 +112,15 @@ export const PAGES: Record<PageId, PageSeo> = {
     changefreq: "weekly",
     priority: 0.8,
   },
+  fee: {
+    path: "/fee",
+    name: "Счёт",
+    title: "Сколько месяцев зарплаты стоит счёт агентства | Atoll Path",
+    description:
+      "Счёт агентства ÷ basic в месяц. Не налог MIRA и не калькулятор service charge с /roles. Не юридическое заключение.",
+    changefreq: "weekly",
+    priority: 0.7,
+  },
   scams: {
     path: "/scams",
     name: "Скамы",
@@ -192,6 +204,7 @@ const INDEXABLE: PageId[] = [
   "documents",
   "contract",
   "scams",
+  "fee",
   "research",
   "reddit",
   "faq",
@@ -206,7 +219,7 @@ export function sitemapEntries(_origin?: string) {
     const p = PAGES[id];
     return {
       loc: `${SITE_ORIGIN}${p.path === "/" ? "" : p.path}`,
-      lastmod: CHECKED_AT,
+      lastmod: "2026-09-10",
       changefreq: p.changefreq,
       priority: p.priority,
     };
