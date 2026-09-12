@@ -5,6 +5,7 @@ import { useApp } from "@/lib/maldives/store";
 import { useDocs } from "@/lib/maldives/docs-store";
 import { TEMPLATES } from "@/lib/maldives/templates";
 import { cn } from "@/lib/utils";
+import { HUB_URL } from "@/lib/maldives/seo";
 import type { DocLang } from "@/lib/maldives/docs-types";
 
 export function DocsShell({ children }: { children: ReactNode }) {
@@ -102,6 +103,17 @@ export function DocsShell({ children }: { children: ReactNode }) {
             <Link to="/contact" className="no-underline hover:text-[#202124]">
               {ru ? "Контакт" : "Contact"}
             </Link>
+            <Link to="/fee" className="no-underline hover:text-[#202124]">
+              {ru ? "Счёт агентства" : "Agency fee"}
+            </Link>
+            <a
+              href={HUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-md border border-[#dadce0] bg-white px-2.5 py-0.5 text-[#202124] no-underline hover:border-[#202124]"
+            >
+              Ultimatum hub
+            </a>
           </nav>
         </footer>
       )}
