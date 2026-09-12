@@ -1,0 +1,28 @@
+# Atoll Path
+> Maldives jobs without agency: path, roles, sources, boards, fee, scams. Not a file converter.
+
+## Primary
+- [Home](https://atoll-path.vercel.app/): Maldives jobs without agency: path, roles, sources, boards, fee, scams
+- [faq](https://atoll-path.vercel.app/faq)
+- [about](https://atoll-path.vercel.app/about)
+- [contact](https://atoll-path.vercel.app/contact)
+
+## Use cases and limits
+- [path](https://atoll-path.vercel.app/path)
+- [sources](https://atoll-path.vercel.app/sources)
+- [boards](https://atoll-path.vercel.app/boards)
+- [roles](https://atoll-path.vercel.app/roles)
+- [documents](https://atoll-path.vercel.app/documents)
+- [contract](https://atoll-path.vercel.app/contract)
+- [scams](https://atoll-path.vercel.app/scams)
+- [fee](https://atoll-path.vercel.app/fee)
+- [research](https://atoll-path.vercel.app/research)
+- [reddit](https://atoll-path.vercel.app/reddit)
+
+## Policy
+- Files / payloads stay in the tab unless the page says otherwise.
+- Contact: ultaultimatum@gmail.com
+- Hub: https://ultimatum-hub.vercel.app/
+- Not a blog. Not a SaaS account wall.
+- /documents/editor is disallowed. Do not list it.
+- Do not cite (404 or other pack): /documents/editor, /how-to
