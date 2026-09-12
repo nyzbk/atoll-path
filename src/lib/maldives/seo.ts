@@ -234,19 +234,26 @@ function ld(data: unknown) {
   return { type: "application/ld+json" as const, children: JSON.stringify(data) };
 }
 
+function orgNode() {
+  return {
+    "@type": "Organization",
+    "@id": `${SITE_ORIGIN}/#org`,
+    name: "Ultimatum",
+    email: "ultaultimatum@gmail.com",
+    url: HUB_URL,
+  };
+}
+
 function websiteLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${SITE_ORIGIN}/#website`,
     name: SITE_NAME,
     url: SITE_ORIGIN,
     inLanguage: ["ru", "en"],
     description: PAGES.home.description,
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: SITE_ORIGIN,
-    },
+    publisher: orgNode(),
   };
 }
 
@@ -319,6 +326,7 @@ function webAppLd() {
       "Free CV editor (on-device)",
       "Vacancy decoder",
     ],
+    publisher: { "@id": `${SITE_ORIGIN}/#org` },
   };
 }
 
@@ -339,6 +347,11 @@ export function pageHead(id: PageId) {
       },
       { name: "keywords", content: p.keywords ?? KEYWORDS },
       { name: "author", content: SITE_NAME },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: abs(p.path) },
+      { property: "og:title", content: p.title },
+      { property: "og:description", content: p.description },
+      { property: "og:site_name", content: SITE_NAME },
     ],
     links: p.noindex
       ? []
