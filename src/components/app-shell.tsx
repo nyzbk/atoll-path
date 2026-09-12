@@ -17,6 +17,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { AdUnit, LEGAL_PATHS } from "@/components/ads/ad-unit";
 import { useApp, type Lang } from "@/lib/maldives/store";
 import { playbook } from "@/lib/maldives/knowledge";
+import { HUB_URL } from "@/lib/maldives/seo";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -154,6 +155,17 @@ export function AppShell({ children }: { children: ReactNode }) {
               <Link to="/contact" className="no-underline hover:text-fg">
                 {ru ? "Контакт" : "Contact"}
               </Link>
+              <Link to="/fee" className="no-underline hover:text-fg">
+                {ru ? "Счёт агентства" : "Agency fee"}
+              </Link>
+              <a
+                href={HUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-lg border border-border bg-elevated px-3 py-1 text-sm text-fg no-underline hover:border-accent"
+              >
+                Ultimatum hub
+              </a>
             </nav>
           </div>
           <p className="mt-3 text-sm text-subtle">
