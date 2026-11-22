@@ -16,6 +16,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ContractRouteImport } from './routes/contract'
 import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FeeRouteImport } from './routes/fee'
 import { Route as PathRouteImport } from './routes/path'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RedditRouteImport } from './routes/reddit'
@@ -61,6 +62,11 @@ const DocumentsRoute = DocumentsRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeeRoute = FeeRouteImport.update({
+  id: '/fee',
+  path: '/fee',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PathRoute = PathRouteImport.update({
@@ -127,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/contract': typeof ContractRoute
   '/documents': typeof DocumentsRouteWithChildren
   '/faq': typeof FaqRoute
+  '/fee': typeof FeeRoute
   '/path': typeof PathRoute
   '/privacy': typeof PrivacyRoute
   '/reddit': typeof RedditRoute
@@ -146,6 +153,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/contract': typeof ContractRoute
   '/faq': typeof FaqRoute
+  '/fee': typeof FeeRoute
   '/path': typeof PathRoute
   '/privacy': typeof PrivacyRoute
   '/reddit': typeof RedditRoute
@@ -167,6 +175,7 @@ export interface FileRoutesById {
   '/contract': typeof ContractRoute
   '/documents': typeof DocumentsRouteWithChildren
   '/faq': typeof FaqRoute
+  '/fee': typeof FeeRoute
   '/path': typeof PathRoute
   '/privacy': typeof PrivacyRoute
   '/reddit': typeof RedditRoute
@@ -189,6 +198,7 @@ export interface FileRouteTypes {
     | '/contract'
     | '/documents'
     | '/faq'
+    | '/fee'
     | '/path'
     | '/privacy'
     | '/reddit'
@@ -208,6 +218,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/contract'
     | '/faq'
+    | '/fee'
     | '/path'
     | '/privacy'
     | '/reddit'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/contract'
     | '/documents'
     | '/faq'
+    | '/fee'
     | '/path'
     | '/privacy'
     | '/reddit'
@@ -249,6 +261,7 @@ export interface RootRouteChildren {
   ContractRoute: typeof ContractRoute
   DocumentsRoute: typeof DocumentsRouteWithChildren
   FaqRoute: typeof FaqRoute
+  FeeRoute: typeof FeeRoute
   PathRoute: typeof PathRoute
   PrivacyRoute: typeof PrivacyRoute
   RedditRoute: typeof RedditRoute
@@ -309,6 +322,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fee': {
+      id: '/fee'
+      path: '/fee'
+      fullPath: '/fee'
+      preLoaderRoute: typeof FeeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/path': {
@@ -413,6 +433,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContractRoute: ContractRoute,
   DocumentsRoute: DocumentsRouteWithChildren,
   FaqRoute: FaqRoute,
+  FeeRoute: FeeRoute,
   PathRoute: PathRoute,
   PrivacyRoute: PrivacyRoute,
   RedditRoute: RedditRoute,

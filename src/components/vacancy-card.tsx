@@ -47,10 +47,15 @@ export function VacancyCard({
                   ? ru
                     ? "борд"
                     : "board"
-                  : ru
-                    ? "разбор"
-                    : "decoded"}
+                  : vacancy.kind === "verified-snapshot"
+                    ? ru
+                      ? "снимок"
+                      : "snapshot"
+                    : ru
+                      ? "разбор"
+                      : "decoded"}
             </Badge>
+            {vacancy.reference ? <Badge tone="muted">Ref {vacancy.reference}</Badge> : null}
           </div>
           <p className="mt-1 text-sm text-muted">{t(lang, vacancy.role)}</p>
         </div>

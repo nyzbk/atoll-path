@@ -1,4 +1,4 @@
-import { CHECKED_AT, type LocaleText } from "./knowledge";
+import type { LocaleText } from "./knowledge";
 import type { FieldMark, TrustLevel } from "./trust";
 
 export type VacancyFieldKey =
@@ -11,7 +11,7 @@ export type VacancyFieldKey =
   | "schedule"
   | "foreigners";
 
-export type VacancyKind = "employer-desk" | "board-signal" | "decoded";
+export type VacancyKind = "employer-desk" | "board-signal" | "verified-snapshot" | "decoded";
 
 export type VacancyField = {
   mark: FieldMark;
@@ -24,6 +24,7 @@ export type Vacancy = {
   role: LocaleText;
   sourceId: string;
   sourceUrl: string;
+  reference?: string;
   publishedAt?: string;
   checkedAt: string;
   trust: TrustLevel;
@@ -66,14 +67,14 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Карьерная страница группы — не конкретная вакансия", en: "Group careers page — not a single posting" },
     sourceId: "sunsiyam",
     sourceUrl: "https://www.sunsiyam.com/about-sun-siyam/careers/",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "Прямой ATS мальдивской группы. Каждая роль читается отдельно: иностранцы, билет и SC на групповой странице не обещаны.",
-      en: "Direct ATS of a Maldivian group. Read each role: foreigners, airfare and SC are not promised at group level.",
+      ru: "Общая страница направляет узнавать о текущих возможностях по careers@sunsiyam.com; сама не содержит конкретных объявлений. Открытые вакансии на дату проверки не подтверждены.",
+      en: "The general page directs enquiries about current opportunities to careers@sunsiyam.com; it contains no individual postings. No open vacancy was confirmed on the check date.",
     },
   },
   {
@@ -82,14 +83,14 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Карьерная страница группы", en: "Group careers page" },
     sourceId: "villa",
     sourceUrl: "https://villaresorts.com/careers/",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "Nautica, Park, Royal Island и др. Пишите на домен группы, не на Gmail посредника.",
-      en: "Nautica, Park, Royal Island and others. Write to the group domain, not a middleman’s Gmail.",
+      ru: "Страница показывает раздел AVAILABLE JOBS, но список загружается динамически. У доступных карточек SmartRecruiters не удалось подтвердить открытый статус; проверяйте каждую роль в первоисточнике.",
+      en: "The page shows an AVAILABLE JOBS section, but the list loads dynamically. Open status could not be confirmed on accessible SmartRecruiters cards; verify each role at its source.",
     },
   },
   {
@@ -98,14 +99,14 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Карьерная страница (VARU и др. в группе)", en: "Careers page (VARU and others in the group)" },
     sourceId: "atmosphere",
     sourceUrl: "https://careers.atmospherecore.com/jobs",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "Официальный ATS Atmosphere Core. Не копируем названия ролей с чужих бордов — открывайте первоисточник.",
-      en: "Official Atmosphere Core ATS. We do not copy role titles from third-party boards — open the primary source.",
+      ru: "Официальный список при проверке показывал только загрузку; отдельная проверенная страница ответила Job not found. Активная вакансия на Мальдивах не подтверждена.",
+      en: "The official listing showed only a loading state when checked; a tested individual page returned Job not found. No active Maldives vacancy was confirmed.",
     },
   },
   {
@@ -114,14 +115,14 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Глобальный поиск, фильтр Maldives", en: "Global search, filter Maldives" },
     sourceId: "marriott",
     sourceUrl: "https://careers.marriott.com/jobs",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "JW, W, St. Regis, Le Méridien и др. HR пишет с домена Marriott. Relocation/visa — только если это в конкретной карточке.",
-      en: "JW, W, St. Regis, Le Méridien and others. HR writes from a Marriott domain. Relocation/visa only if that posting says so.",
+      ru: "По доступным официальным страницам не удалось подтвердить открытое мальдивское объявление. Relocation, visa и другие условия — только если они указаны в конкретной карточке.",
+      en: "The accessible official pages did not confirm an open Maldives posting. Relocation, visa, and other terms apply only when stated in an individual listing.",
     },
   },
   {
@@ -130,14 +131,14 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Глобальный поиск, фильтр Maldives", en: "Global search, filter Maldives" },
     sourceId: "fourseasons",
     sourceUrl: "https://careers.fourseasons.com/us/en/",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "Официальный ATS сети. Не путать с агентскими «гарантиями Four Seasons».",
-      en: "Official brand ATS. Do not confuse with agency “Four Seasons guarantees”.",
+      ru: "Официальный поиск по Maldives сообщил об отсутствии активных вакансий при проверке; страницы отдельных ролей не подтвердили, что отклик ещё открыт.",
+      en: "The official Maldives search reported no active openings when checked; individual role pages did not confirm that applications were still open.",
     },
   },
   {
@@ -146,14 +147,14 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Глобальный поиск, фильтр Maldives", en: "Global search, filter Maldives" },
     sourceId: "hilton",
     sourceUrl: "https://jobs.hilton.com/",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "Официальный ATS Hilton. Условия work permit смотрите в карточке, не в Telegram-пересказе.",
-      en: "Official Hilton ATS. Read work-permit terms in the posting, not in a Telegram recap.",
+      ru: "Официальная выдача по Maldives загружается динамически; одна проверенная карточка была недоступна для чтения, другая прямо сообщала, что вакансия больше недоступна. Открытые позиции не подтверждены.",
+      en: "The official Maldives results load dynamically; one checked listing was unreadable and another said the job was no longer available. No open role was confirmed.",
     },
   },
   {
@@ -161,15 +162,120 @@ export const vacancySnapshots: Vacancy[] = [
     employer: "Accor",
     role: { ru: "Глобальный поиск, фильтр Maldives", en: "Global search, filter Maldives" },
     sourceId: "accor",
-    sourceUrl: "https://careers.accor.com/",
-    checkedAt: CHECKED_AT,
+    sourceUrl: "https://careers.accor.com/global/en/jobs?q=&options=&page=1&ln=Maldives&lr=1&li=MV&size=24",
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "Raffles, Pullman, Mövenpick и другие бренды Accor на Мальдивах — только через этот ATS или сайт отеля.",
-      en: "Raffles, Pullman, Mövenpick and other Accor brands in Maldives — through this ATS or the hotel site.",
+      ru: "Официальная выдача Accor с фильтром Maldives. Ниже — датированные снимки трёх конкретных карточек, найденных в выдаче; срок истечения отображается некорректно, поэтому перепроверьте доступность перед откликом.",
+      en: "Official Accor results filtered for Maldives. Below are dated snapshots of three individual listings found there; the expiry date is malformed, so recheck availability before applying.",
+    },
+  },
+  {
+    id: "accor-pool-technician-mercure-kooddoo",
+    employer: "Mercure Maldives Kooddoo Resort",
+    role: { ru: "Техник по обслуживанию бассейна", en: "Pool Technician" },
+    sourceId: "accor",
+    sourceUrl:
+      "https://careers.accor.com/global/en/job/pool-technician-in-mercure-maldives-kooddoo-resort-mercure-maldives-k-jid-114938",
+    reference: "REF123752X",
+    checkedAt: "2026-11-22",
+    trust: "A",
+    kind: "verified-snapshot",
+    foreigners: "clarify",
+    fields: blankFields({
+      schedule: {
+        mark: "stated",
+        value: {
+          ru: "Полная занятость; гибкий график и готовность работать дольше при необходимости",
+          en: "Full-time; flexible schedule and willingness to work extra hours when needed",
+        },
+      },
+      foreigners: {
+        mark: "clarify",
+        value: {
+          ru: "Допуск иностранцев не указан; уточните у HR",
+          en: "Foreign-candidate eligibility not stated; ask HR",
+        },
+      },
+    }),
+    note: {
+      ru: "Снимок официальной карточки Accor, найденной в выдаче по Мальдивам 22.11.2026. Указаны Full-Time и Permanent; требуется гибкость в расписании и готовность работать дольше при необходимости. Указанные льготы Accor: скидочная карта в отелях Accor, обучение через Academy Accor, возможности карьерного роста и участие в CSR-активностях. Дата истечения отображается как 01/01/0001 — проверьте, доступен ли отклик, перед подачей.",
+      en: "Snapshot of an official Accor listing found in Maldives results on 22 Nov 2026. It states Full-Time and Permanent and requires schedule flexibility and willingness to work extra hours when needed. Listed Accor benefits include a discount card at Accor hotels, training through Academy Accor, career opportunities, and CSR activities. The expiry date displays as 01/01/0001 — verify applications are still open before applying.",
+    },
+    warn: {
+      ru: "Технически некорректная дата истечения: 01/01/0001. Это датированный снимок, не живая лента.",
+      en: "Malformed expiry date: 01/01/0001. This is a dated snapshot, not a live feed.",
+    },
+  },
+  {
+    id: "accor-welfare-coordinator-mercure-kooddoo",
+    employer: "Mercure Maldives Kooddoo Resort",
+    role: { ru: "Координатор благополучия сотрудников", en: "Welfare Coordinator" },
+    sourceId: "accor",
+    sourceUrl:
+      "https://careers.accor.com/global/en/job/welfare-coordinator-in-mercure-maldives-kooddoo-resort-mercure-maldives-k-jid-116869",
+    reference: "REF125588Q",
+    checkedAt: "2026-11-22",
+    trust: "A",
+    kind: "verified-snapshot",
+    foreigners: "clarify",
+    fields: blankFields({
+      schedule: {
+        mark: "stated",
+        value: { ru: "Полная занятость; часы не указаны", en: "Full-time; hours not stated" },
+      },
+      foreigners: {
+        mark: "clarify",
+        value: {
+          ru: "Допуск иностранцев не указан; уточните у HR",
+          en: "Foreign-candidate eligibility not stated; ask HR",
+        },
+      },
+    }),
+    note: {
+      ru: "Снимок официальной карточки Accor, найденной в выдаче по Мальдивам 22.11.2026. Указаны Full-Time и Permanent; опыт работы на Мальдивах — предпочтительный. Указанные льготы Accor: скидочная карта в отелях Accor, обучение через Academy Accor, возможности карьерного роста и участие в CSR-активностях. Дата истечения отображается как 01/01/0001 — проверьте, доступен ли отклик, перед подачей.",
+      en: "Snapshot of an official Accor listing found in Maldives results on 22 Nov 2026. It states Full-Time and Permanent; Maldives experience is preferred. Listed Accor benefits include a discount card at Accor hotels, training through Academy Accor, career opportunities, and CSR activities. The expiry date displays as 01/01/0001 — verify applications are still open before applying.",
+    },
+    warn: {
+      ru: "Технически некорректная дата истечения: 01/01/0001. Это датированный снимок, не живая лента.",
+      en: "Malformed expiry date: 01/01/0001. This is a dated snapshot, not a live feed.",
+    },
+  },
+  {
+    id: "accor-telephone-operator-pullman-maamutaa",
+    employer: "Pullman Maldives All-Inclusive Resort",
+    role: { ru: "Оператор телефонной станции", en: "Telephone Operator" },
+    sourceId: "accor",
+    sourceUrl:
+      "https://careers.accor.com/global/en/job/telephone-operator-in-pullman-maldives-all-inclusive-resort-pullman-maam-jid-116245",
+    reference: "REF125001M",
+    checkedAt: "2026-11-22",
+    trust: "A",
+    kind: "verified-snapshot",
+    foreigners: "clarify",
+    fields: blankFields({
+      schedule: {
+        mark: "stated",
+        value: { ru: "Полная занятость; часы не указаны", en: "Full-time; hours not stated" },
+      },
+      foreigners: {
+        mark: "clarify",
+        value: {
+          ru: "Допуск иностранцев не указан; уточните у HR",
+          en: "Foreign-candidate eligibility not stated; ask HR",
+        },
+      },
+    }),
+    note: {
+      ru: "Снимок официальной карточки Accor, найденной в выдаче по Мальдивам 22.11.2026. Место: остров Маамутаа, атолл Гаафу-Алифу; указаны Full-Time и Permanent. Дополнительные языки названы преимуществом. Указанные льготы Accor: скидочная карта в отелях Accor, обучение через Academy Accor, возможности карьерного роста и участие в CSR-активностях. Дата истечения отображается как 01/01/0001 — проверьте, доступен ли отклик, перед подачей.",
+      en: "Snapshot of an official Accor listing found in Maldives results on 22 Nov 2026. Location: Maamutaa Island, Gaafu Alifu Atoll; it states Full-Time and Permanent. Additional languages are an advantage. Listed Accor benefits include a discount card at Accor hotels, training through Academy Accor, career opportunities, and CSR activities. The expiry date displays as 01/01/0001 — verify applications are still open before applying.",
+    },
+    warn: {
+      ru: "Технически некорректная дата истечения: 01/01/0001. Это датированный снимок, не живая лента.",
+      en: "Malformed expiry date: 01/01/0001. This is a dated snapshot, not a live feed.",
     },
   },
   {
@@ -178,18 +284,18 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Гостеприимство, лента резортов", en: "Hospitality, resort feed" },
     sourceId: "jobmaldives",
     sourceUrl: "https://www.job-maldives.com/",
-    checkedAt: "2026-08-22",
+    checkedAt: "2026-11-22",
     trust: "B",
     kind: "board-signal",
     foreigners: "clarify",
     fields: blankFields(),
     note: {
-      ru: "На 22.08.2026 в ленте были материалы, связанные с VARU by Atmosphere и Sun Siyam Vilu Reef. Это сигнал борда, не скопированный оффер и не зарплата.",
-      en: "As of 22 Aug 2026 the feed showed items tied to VARU by Atmosphere and Sun Siyam Vilu Reef. A board signal — not a copied offer and not a salary.",
+      ru: "На 22.11.2026 лента показывала датированные записи, включая Recreation Attendant — RAAYA by Atmosphere. В доступном тексте не удалось подтвердить, что конкретный набор ещё открыт; это сигнал борда, не проверенный оффер.",
+      en: "On 22 Nov 2026 the feed showed dated posts, including Recreation Attendant — RAAYA by Atmosphere. The accessible text did not confirm that a specific application was still open; this is a board signal, not a verified offer.",
     },
     warn: {
-      ru: "Зарплату и «берут иностранцев» нельзя считать, пока вы не открыли саму карточку.",
-      en: "Do not treat pay or “foreigners hired” as fact until you open the posting itself.",
+      ru: "Перед откликом откройте карточку и проверьте, что набор не закрыт; зарплата и допуск иностранцев — только если прямо указаны в объявлении.",
+      en: "Before applying, open the listing and check that applications are still open; pay and foreign-candidate eligibility count only when stated in the posting.",
     },
   },
   {
@@ -198,7 +304,7 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Локальный + туристический рынок", en: "Local + tourism market" },
     sourceId: "jobsicle",
     sourceUrl: "https://www.jobsicle.mv/",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "B",
     kind: "board-signal",
     foreigners: "clarify",
@@ -212,8 +318,8 @@ export const vacancySnapshots: Vacancy[] = [
       },
     }),
     note: {
-      ru: "Крупнейший частный борд. Не госсайт. Work permit всё равно делает работодатель в Xpat.",
-      en: "Largest private board. Not government. The employer still files the work permit in Xpat.",
+      ru: "Частный борд, не госсайт. Главная показывала 157 открытых объявлений, но проверенные карточки содержали прошедшие сроки подачи; проверяйте дату и ограничение Maldivians only в каждой записи.",
+      en: "A private board, not government. Its homepage showed 157 open listings, but the checked detail pages had past deadlines; verify each listing’s date and any Maldivians-only restriction.",
     },
   },
   {
@@ -222,7 +328,7 @@ export const vacancySnapshots: Vacancy[] = [
     role: { ru: "Государственная карьерная служба", en: "National Careers Service" },
     sourceId: "mycareer",
     sourceUrl: "https://mycareer.gov.mv/en/jobs",
-    checkedAt: CHECKED_AT,
+    checkedAt: "2026-11-22",
     trust: "A",
     kind: "employer-desk",
     foreigners: "clarify",
@@ -236,8 +342,8 @@ export const vacancySnapshots: Vacancy[] = [
       },
     }),
     note: {
-      ru: "Официальный портал. Это не кнопка «государство трудоустроило экспата на резорт».",
-      en: "Official portal. It is not a button that hires an expatriate onto a resort.",
+      ru: "Официальный портал со списком, который загружается динамически. Проверенные карточки сообщали, что подать заявку больше нельзя; открытая вакансия на дату проверки не подтверждена.",
+      en: "Official portal with a dynamically loaded list. The checked detail pages said applications were no longer available; no open vacancy was confirmed on the check date.",
     },
   },
 ];
@@ -267,7 +373,7 @@ function field(re: RegExp, text: string): VacancyField {
 
 function extractEmployer(text: string): string {
   const company = text.match(
-    /(?:company|employer|resort|hotel|property)\s*[:\-]\s*([^\n]{3,80})/i,
+    /(?:company|employer|resort|hotel|property)\s*[:-]\s*([^\n]{3,80})/i,
   );
   if (company?.[1]) return company[1].trim();
   const named = text.match(
@@ -279,7 +385,7 @@ function extractEmployer(text: string): string {
 }
 
 function extractRole(text: string): string {
-  const labeled = text.match(/(?:role|position|vacancy|job title|должность)\s*[:\-]\s*([^\n]{3,80})/i);
+  const labeled = text.match(/(?:role|position|vacancy|job title|должность)\s*[:-]\s*([^\n]{3,80})/i);
   if (labeled?.[1]) return labeled[1].trim();
   const roles =
     /(waiter|waitress|hostess|host\b|bartender|barista|commis|steward|housekeep|room attendant|guest relation|receptionist|front office|spa therapist|recreation|butcher|chef de partie|cdp|sous chef|f&b|fnb)/i;
@@ -290,7 +396,7 @@ function extractRole(text: string): string {
 export function decodeVacancy(raw: string, sourceUrl = ""): Vacancy {
   const text = raw.replace(/\s+/g, " ").trim();
   const salary = field(
-    /(\$|usd|mvr|rufiyaa)\s*[\d,.]+(?:\s*[-–to]+\s*[\d,.]+)?|basic\s*(salary)?\s*[:\-]?\s*[\d,.]+/i,
+    /(\$|usd|mvr|rufiyaa)\s*[\d,.]+(?:\s*[-–to]+\s*[\d,.]+)?|basic\s*(salary)?\s*[:-]?\s*[\d,.]+/i,
     text,
   );
   const serviceCharge = field(/service[\s-]?charge|\bsc\b|сервисн\w*\s+сбор/i, text);

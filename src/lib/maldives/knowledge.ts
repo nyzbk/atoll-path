@@ -164,8 +164,8 @@ export const sources: Source[] = [
     lang: ["en", "dv"],
     foreignerUseful: true,
     note: {
-      ru: "Крупнейший частный борд Мальдив с 2016. Часть вакансий «Maldivians only». Смотрите фильтр гражданства. Не госсайт.",
-      en: "Largest private board since 2016. Some jobs are Maldivians-only. Check nationality filters. Not a government site.",
+      ru: "Частный, не государственный борд. Главная при проверке показывала 157 открытых объявлений, но проверенные карточки содержали прошедшие сроки подачи; проверяйте дату и ограничение Maldivians only в каждой записи.",
+      en: "A private, non-government board. Its homepage showed 157 open listings when checked, but the detail pages we checked had past deadlines; verify each listing’s date and any Maldivians-only restriction.",
     },
   },
   {
@@ -176,8 +176,8 @@ export const sources: Source[] = [
     lang: ["en"],
     foreignerUseful: true,
     note: {
-      ru: "Гостеприимство и резорты. На 22.08.2026 видны вакансии VARU by Atmosphere, Sun Siyam Vilu Reef и др. Бесплатный просмотр для соискателя.",
-      en: "Hospitality and resorts. As of 22 Aug 2026 listed VARU by Atmosphere, Sun Siyam Vilu Reef and others. Free for jobseekers to browse.",
+      ru: "Гостеприимство и резорты. На 22.11.2026 лента показывала датированные записи, включая Recreation Attendant — RAAYA by Atmosphere; доступный текст не подтвердил, что набор ещё открыт. Проверяйте статус каждой карточки.",
+      en: "Hospitality and resorts. On 22 Nov 2026 the feed showed dated posts, including Recreation Attendant — RAAYA by Atmosphere; accessible text did not confirm applications were still open. Check each listing’s status.",
     },
   },
   {
@@ -279,13 +279,13 @@ export const sources: Source[] = [
   {
     id: "accor",
     name: "Accor Careers",
-    url: "https://careers.accor.com/",
+    url: "https://careers.accor.com/global/en/jobs?q=&options=&page=1&ln=Maldives&lr=1&li=MV&size=24",
     kind: "employer",
     lang: ["en"],
     foreignerUseful: true,
     note: {
-      ru: "Глобальный ATS группы Accor. Фильтр Maldives. Raffles / Pullman / Mövenpick и др.",
-      en: "Accor group ATS. Filter Maldives. Raffles / Pullman / Mövenpick and others.",
+      ru: "Официальная выдача Accor с фильтром Maldives. У трёх карточек вакансий, проверенных 22.11.2026, дата истечения отображалась как 01/01/0001; срок закрытия неизвестен, перепроверьте доступность перед откликом.",
+      en: "Official Accor results filtered for Maldives. Three individual listings checked on 22 Nov 2026 showed an expiry date of 01/01/0001; the closing date is unknown, so recheck availability before applying.",
     },
   },
   {
